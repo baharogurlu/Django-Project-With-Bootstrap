@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatiple" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Django Project</title>
+
+
+   <link rel="stylesheet" href = "{% static 'polls/bootstrap-3.4.1-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href = "{% static 'polls/bootstrap-3.4.1-dist/css/bootstrap-theme.min.css' %}">
+</head>
+{% include 'polls/header.html' %}
+<div class="jumbotron">
+    <div class="container">
+        {% block main_content %}
+        {% endblock %}
+    </div>
+</div>
+{% include 'polls/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'polls/base.html' %}
+
+{% block main_content %}
+<h3>Soru Seçiniz</h3>
+{% if latest_question %}
+    <ul>
+        {% for question in latest_question %}
+
+        <li><a href="{% url 'polls:detail' question.id   %}"><b>{{question.question_text}}</b></a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>Henüz soru girilmemiş. Ekleyebilirsiniz</p>
+{% endif %}
+
+{% endblock %}

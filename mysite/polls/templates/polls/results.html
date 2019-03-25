@@ -1,0 +1,14 @@
+{% extends 'polls/base.html' %}
+
+{% block main_content %}
+    <p><b>Soru:</b>{{question.question_text}}</p>
+
+    <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{choice.choice_text}}--{{choice.vote}}   vote  {{choice.vote|pluralize}}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'polls:detail' question.id %}"> Vote Again</a>
+    <a href="{% url 'polls:index'  %}"> Anasayfa</a>
+{% endblock %}
