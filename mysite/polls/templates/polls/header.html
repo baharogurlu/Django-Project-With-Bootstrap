@@ -1,6 +1,15 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <h1><label>My First Django Project</label></h1>
+    {% if request.user %}
+    <a href="{% url 'polls:logout' %}">
+        Çıkış
+    </a>
+{% else %}
+    <a href="{% url 'polls:login' %}">
+        Giriş
+    </a>
+{% endif%}
   </div>
 </nav>
 

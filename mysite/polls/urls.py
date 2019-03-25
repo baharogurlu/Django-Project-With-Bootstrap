@@ -17,6 +17,8 @@ Including another URLconf
 from django.conf.urls import url
 from . import views
 from django.urls import include
+from django.conf import settings
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     url(r'^$', views.index, name="index"),
@@ -25,6 +27,8 @@ urlpatterns = [
     #127.0.0.1/polls/1
     url(r'^(?P<question_id>[0-9]+)/results$', views.results, name="results"),
     # 127.0.0.1/polls/1/results
-    url(r'^(?P<question_id>[0-9]+)/vote$', views.vote, name="vote")
+    url(r'^(?P<question_id>[0-9]+)/vote$', views.vote, name="vote"),
     # 127.0.0.1/polls/1/vote
+    url(r'^login/$', views.login_user, name="login_user"),
+    url(r'^logout/$', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 ]
