@@ -1,6 +1,6 @@
 # Django-Project-With-Bootstrap
 Django Project With Bootstrap
-Database-URL-Views-Bootstrap Template
+Database-URL-Views-Bootstrap Template-Security
 
 My site adlı proje oluştukmak için:
 django-admin startproject mysite
